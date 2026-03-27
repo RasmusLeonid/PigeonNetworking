@@ -133,6 +133,11 @@ Pigeon Networking is probably not well suited for mesh-based P2P as it's designe
         client.Start();
         Debug.Log("Client start called");
     }
+
+  	private void Update()
+    {
+        client?.Tick();
+    }
     private void OnConnectionRejectedFromServer(object sender, ConnectionRejectedFromServerEvent callback)
     {
         Debug.Log($"Connection Rejected from server - Reason {callback.RejectionReason}");
